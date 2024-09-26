@@ -1,0 +1,65 @@
+body{
+    color:rgb(224, 237, 255);
+    background-color: rgb(51, 51, 51);
+    font-family: "Roboto Slab", "consolas";
+}
+h1{
+    background-color: rgb(9, 18, 15);
+    text-decoration: wavy underline rgb(0, 125, 23);
+    border-right-style:groove;
+   
+}
+p{
+    border-style:outset;
+    border-width: 4px;
+    border-color: rgb(144, 164, 185);
+    border-radius: 8px;
+    padding: 4px;
+    color:rgb(228, 240, 255);
+    font-size: 18px;
+    width:50%;
+}
+
+/* LINK STYLING */
+
+.text-links{
+    color:rgb(189, 239, 255);
+    text-decoration: none;
+}
+
+.project-links{
+    color: rgb(173, 173, 255);
+    text-decoration: none;
+}
+.project-links:active{
+    color:rgb(189, 239, 255);
+}
+.project-links:visited{
+    color:rgb(189, 239, 255);
+}
+
+/* PAGE NAVIGATION SYLING */
+
+nav {
+    background-color: #f0f0f0;
+    padding: 10px;
+    border: 1px solid #ccc;
+  }
+.bottom-right {
+    position: fixed; /* Sticks to the viewport, not the document */
+    bottom: 0;  /* 0px from the bottom */
+    right: 0;   /* 0px from the right */
+    background-color: lightblue; /* Optional styling */
+    padding: 10px;
+  }
+
+  /* Optional styling for the links */
+  .bottom-right a {
+    display: block;
+    color: black;
+    text-decoration: none;
+    margin: 5px 0;
+  }
+  .bottom-right.bottom-right:visitied{
+    color:darkgreen;
+  }
