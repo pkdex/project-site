@@ -5,8 +5,13 @@ body{
 }
 h1{
     background-color: rgb(9, 18, 15);
-    text-decoration: wavy underline rgb(0, 125, 23);
+    text-decoration: wavy underline rgb(189, 189, 189);
     border-right-style:groove;
+}
+h4{
+    background-color: rgb(0, 59, 24);
+    text-decoration: wavy underline rgb(0, 42, 8);
+    width:20%;
    
 }
 p{
@@ -17,24 +22,24 @@ p{
     padding: 4px;
     color:rgb(228, 240, 255);
     font-size: 18px;
-    width:50%;
+   
+    position:relative;
 }
 
 /* LINK STYLING */
 
-.text-links{
+.text-link{
     color:rgb(189, 239, 255);
     text-decoration: none;
 }
-
-.project-links{
+.page-link{
     color: rgb(173, 173, 255);
     text-decoration: none;
 }
-.project-links:active{
+.page-link:active{
     color:rgb(189, 239, 255);
 }
-.project-links:visited{
+.page-link:visited{
     color:rgb(189, 239, 255);
 }
 
