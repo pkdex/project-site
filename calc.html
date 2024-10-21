@@ -6,73 +6,113 @@
     <title>Calculator - html only</title>
 
     <style>
-       .calculator{
-        width: 300px;
-        height: 300px;
-        margin: 0 auto; 
-        border-width:4px;
-        border-color:rgb(0, 77, 45);
-        border-style: outset;
-       }
-       .buttonsign{
-        background-color: rgba(133, 177, 199, 0.719);
-       }
-       .buttonnums{
-        background-color: aliceblue;
-       }
-       button {
-           width: 100%;
-           height: 40px; 
-           font-size: 30px
-       }
-       input[type="text"]{
-        width:98%;
-        height:80px;
-        font-size:30px;
-        background-color: lightgray;
-       
-        text-align:right;
-       }
+        .calculator {
+            width: 300px;
+            height: 300px;
+            margin: 0 auto; 
+            border-width: 4px;
+            border-color: rgb(0, 77, 45);
+            border-style: outset;
+        }
+        .buttonsign {
+            background-color: rgba(133, 177, 199, 0.719);
+        }
+        .buttonnums {
+            background-color: aliceblue;
+        }
+        button {
+            width: 100%;
+            height: 40px; 
+            font-size: 30px;
+        }
+        input[type="text"] {
+            width: 98%;
+            height: 80px;
+            font-size: 35px;
+            color: black;
+            background-color: lightgray;
+            text-align: right;
+        }
     </style>
 </head>
-<body style="background-color:rgb(40, 40, 40)">
+<body style="background-color: rgb(40, 40, 40)">
 
 <div class="calculator">
     <div>
-        <input type="text" >
+        <input type="text" id="display" disabled>
     </div>
     <div>
-  <table bgcolor="navy" class="calculator buttons">
-    <tr bgcolor="grey">
-        <td><button class="buttonnums">7</button></td>
-        <td><button class="buttonnums">8</button></td>
-        <td><button class="buttonnums">9</button></td>
-        <td><button class="buttonsign">/</button></td>
-        
-    </tr>
-    <tr bgcolor="grey">
-        <td><button class="buttonnums">4</button></td>
-        <td><button class="buttonnums">5</button></td>
-        <td><button class="buttonnums">6</button></td>
-        <td><button class="buttonsign">*</button></td>
-        
-    </tr>
-    <tr bgcolor="grey">
-        <td><button class="buttonnums">1</button></td>
-        <td><button class="buttonnums">2</button></td>
-        <td><button class="buttonnums">3</button></td>
-        <td><button class="buttonsign">-</button></td>
-    </tr>
-    <tr bgcolor="grey">
-        <td><button class="buttonnums">0</button></td>
-        <td><button class="buttonsign">.</button></td>
-        <td><button class="buttonsign">=</button></td>
-        <td><button class="buttonsign">+</button></td>
-        
-    </tr>
-    </table> 
+        <table bgcolor="navy" class="calculator buttons">
+            <tr bgcolor="grey">
+                <td><button class="buttonnums" onclick="appendNumber('7')">7</button></td>
+                <td><button class="buttonnums" onclick="appendNumber('8')">8</button></td>
+                <td><button class="buttonnums" onclick="appendNumber('9')">9</button></td>
+                <td><button class="buttonsign" onclick="appendOperator('/')">/</button></td>   
+            </tr>
+            <tr bgcolor="grey">
+                <td><button class="buttonnums" onclick="appendNumber('4')">4</button></td>
+                <td><button class="buttonnums" onclick="appendNumber('5')">5</button></td>
+                <td><button class="buttonnums" onclick="appendNumber('6')">6</button></td>
+                <td><button class="buttonsign" onclick="appendOperator('*')">*</button></td>
+            </tr>
+            <tr bgcolor="grey">
+                <td><button class="buttonnums" onclick="appendNumber('1')">1</button></td>
+                <td><button class="buttonnums" onclick="appendNumber('2')">2</button></td>
+                <td><button class="buttonnums" onclick="appendNumber('3')">3</button></td>
+                <td><button class="buttonsign" onclick="appendOperator('-')">-</button></td>
+            </tr>
+            <tr bgcolor="grey">
+                <td><button class="buttonnums" onclick="appendNumber('0')">0</button></td>
+                <td><button class="buttonsign" onclick="appendNumber('.')">.</button></td>
+                <td><button class="buttonsign"></button></td> 
+                <td><button class="buttonsign" onclick="appendOperator('+')">+</button></td>  
+            </tr>
+            <tr bgcolor="grey">
+                <td colspan="2" align="left"><button class="buttonsign" onclick="clearInput()">Clear</button></td>
+                <td colspan="2" align="right"><button class="buttonsign" onclick="calculate()">=</button></td> 
+            </tr>
+        </table> 
     </div>    
 </div>
+
+<script>
+    let currentInput = '';
+
+    function appendNumber(num) { 
+        if (num === '.') {
+            const lastNumber = currentInput.split(/[\s+*/-]/).pop(); // splits at any operator
+            if (lastNumber.includes('.')) { // prevent adding a decimal if the last number already has one
+                return; // prevent multiple decimals in the same number
+            }
+        }
+        currentInput += num; 
+        document.getElementById('display').value = currentInput; // updates display to num by accessing display value
+    }
+
+    function appendOperator(op) {
+        if (['+', '-', '*', '/'].includes(currentInput.trim().slice(-1))) { // prevent adding an operator if the last character is an operator
+            return; // do nothing if the last character is already an operator
+        }
+        currentInput += ' ' + op + ' '; // Step 1: Add the operator to the current input
+        document.getElementById('display').value = currentInput; // Step 2: Update the calculator display
+    }
+
+    function calculate() {
+        try {
+            let result = eval(currentInput);  // Evaluate the current input
+            document.getElementById('display').value = result; // Show result in the display
+            currentInput = result;  // Update global currentInput for further calculations
+        } catch (error) {
+            document.getElementById('display').value = 'Error'; // Show error if calculation fails
+            currentInput = '';  // Resets global currentInput
+        }
+    }
+
+    function clearInput() {
+        currentInput = "";  // reset currentInput to an empty string
+        document.getElementById('display').value = "";  // clear the display
+    }
+</script>
     
 </body>
 </html>
