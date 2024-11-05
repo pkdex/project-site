@@ -32,17 +32,44 @@
             display: block;
         }
 
+        body{
+            color:whitesmoke;
+            background-image:url(/images/teaser-earth.jpeg);
+            background-size:50%;
+        }
+    
     </style>
 </head>
 <body>
+    <h1>Select a Location</h1>
     
-    <div class="dropdown">
-        <button class="dropbtn"><h2>City</h2></button>
-        <div class="dropdown-content">
-          <a href="#">Link 1</a>
-          <a href="#">Link 2</a>
-          <a href="#">Link 3</a>
-        </div>
-      </div> 
+    <!-- State Dropdown -->
+    <label for="state">State:</label>
+    <select id="state">
+        <option value="">Select State</option>
+        <option value="california">California</option>
+        <option value="texas">Texas</option>
+        <option value="new_york">New York</option>
+    </select>
+
+    <!-- City Dropdown -->
+    <label for="city">City:</label>
+    <select id="city" disabled>
+        <option value="">Select City</option>
+    </select>
+    
+    <!-- County Dropdown -->
+    <label for="county">County:</label>
+    <select id="county" disabled>
+         <option value="">Select County</option>
+    </select>
+    
+    <!-- Village Dropdown -->
+    <label for="village">Village:</label>
+    <select id="village" disabled>
+        <option value="">Select Village</option>
+    </select>
+    
+    <script src="places-script.js"></script>
 </body>
 </html>
