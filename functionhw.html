@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Functions for Homework</title>
+    <style>
+        body {
+            background-color:grey;
+            padding: 0px;
+            margin:0px;
+            display:grid;
+            justify-content: center;
+            align-items:center;
+            
+        }
+        h1 {
+            color:rgb(3, 1, 97);
+            display:grid;
+            align-items: center;
+        }
+        .container {
+            background-color: #346979;
+            border-radius: 6px;
+            padding: 30px;
+            width: 80%;
+            max-width: 600px;
+            text-align:center;
+            margin:20px;
+        }
+        .result {
+            background-color: rgb(94, 190, 158);
+        }
+    </style>
+</head>
+<body>
+    <h1>Functions for Homework (5, 6, 7)</h1>
+    <div class="container">
+        <h2>Count Digits in a Number</h2>
+        <label for="numberInput">Enter a number:</label>
+        <input type="number" id="numberInput" placeholder="Enter an integer">
+        <button onclick="showNumOfDigits()">Count Digits</button>
+        <p class="result" id="digitsResult"></p> <!-- This will display the digit count result -->
+    </div>
+
+    <div class="container">
+        <h2>Move Capitals To Front</h2>
+        <input type="text" id="inputWord" placeholder="Enter a word">
+        <button onclick="displayCapsToFront()">Move Caps to Front</button>
+        <p class="result" id="capsResult"></p> <!-- This will display the result of capital letters -->
+    </div>
+
+    <div class="container"> 
+        <h2>Reverse string by word</h2>
+        <input type="text" id="inputStr" placeholder="Enter a String">
+        <button onclick="displayReverseStr()">Reverse String</button>
+        <p class="result" id="reverseStrResult"></p> 
+    </div>
+
+    <script src="functionhw-script.js"></script>
+</body>
+</html>

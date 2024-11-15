@@ -5,37 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        .dropdown{
-            position:relative;
-            display:inline-block;
-        }
-        .dropbtn{
-            background-color:aquamarine;
-            color:rgb(0, 0, 0);
-            padding: 16px;
-            font-size: 16px;
-            border-width: 2px;
-        }
-        .dropdown-content{
-            display: none;
-            position: absolute;
-            background-color: #f1f1f1;
-            min-width: 160px;
-            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-            z-index: 1;
-        }
-            /* Links inside the dropdown */
-        .dropdown-content a {
-            color: black;
-            padding: 12px 16px;
-            text-decoration: none;
-            display: block;
-        }
-
         body{
             color:whitesmoke;
             background-image:url(/images/teaser-earth.jpeg);
-            background-size:50%;
+            background-size:75%;
         }
     
     </style>
@@ -43,7 +16,7 @@
 <body>
     <h1>Select a Location</h1>
     
-    <!-- State Dropdown -->
+    <!-- state dropdown ( must be populated here because it is the default and required for following dropdown options ) -->
     <label for="state">State:</label>
     <select id="state">
         <option value="">Select State</option>
@@ -52,19 +25,19 @@
         <option value="new_york">New York</option>
     </select>
 
-    <!-- City Dropdown -->
+    <!-- city dropdown -->
     <label for="city">City:</label>
     <select id="city" disabled>
         <option value="">Select City</option>
     </select>
     
-    <!-- County Dropdown -->
+    <!-- county dropdown -->
     <label for="county">County:</label>
     <select id="county" disabled>
          <option value="">Select County</option>
     </select>
     
-    <!-- Village Dropdown -->
+    <!-- village dropdown -->
     <label for="village">Village:</label>
     <select id="village" disabled>
         <option value="">Select Village</option>

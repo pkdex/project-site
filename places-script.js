@@ -1,4 +1,4 @@
-// Define data for states, cities, counties, and villages
+// data for states, cities, counties, and villages
 const locationData = {
     california: {
         cities: {
@@ -44,29 +44,29 @@ const citySelect = document.getElementById('city');
 const countySelect = document.getElementById('county');
 const villageSelect = document.getElementById('village');
 
-// Populate cities based on state selection
-stateSelect.addEventListener('change', function() {
-    const state = this.value;
+// populate cities based on state selection
+stateSelect.addEventListener('change', function() { // state event listener, listens for 'change' event -> function executed
+    const state = this.value; // returns value of stateSelect, one of the KEYS in locationData
     citySelect.innerHTML = '<option value="">Select City</option>';
-    countySelect.innerHTML = '<option value="">Select County</option>';
+    countySelect.innerHTML = '<option value="">Select County</option>'; // updates/resets html if its already been changed
     villageSelect.innerHTML = '<option value="">Select Village</option>';
     citySelect.disabled = true;
-    countySelect.disabled = true;
+    countySelect.disabled = true; // options are disabled -> state selection must be fulfilled for following selection to be enabled
     villageSelect.disabled = true;
 
     if (state) {
-        const cities = Object.keys(locationData[state].cities);
-        cities.forEach(city => {
+        const cities = Object.keys(locationData[state].cities); // gets an array of cites from selected state in locationData
+        cities.forEach(city => { // loop through array ^ cities of selected state
             const option = document.createElement('option');
-            option.value = city;
-            option.textContent = city.replace('_', ' ');
-            citySelect.appendChild(option);
+            option.value = city; // sets new option to selected city identifier (ex. los_angeles)
+            option.textContent = city.replace('_', ' '); // replaces _ in string w spaces for readability
+            citySelect.appendChild(option); // finally adds new otion to dropdown
         });
         citySelect.disabled = false;
     }
 });
 
-// Populate counties based on city selection
+// populate counties based on city selection
 citySelect.addEventListener('change', function() {
     const state = stateSelect.value;
     const city = this.value;
@@ -87,11 +87,11 @@ citySelect.addEventListener('change', function() {
     }
 });
 
-// Populate villages based on county selection
+// populate village dd based on county selection
 countySelect.addEventListener('change', function() {
     const state = stateSelect.value;
     const county = this.value;
-    villageSelect.innerHTML = '<option value="">Select Village</option>';
+    villageSelect.innerHTML = '<option value="">Select Village</option>'; // now only village is diabled ->
     villageSelect.disabled = true;
 
     if (county) {
