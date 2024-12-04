@@ -1,0 +1,102 @@
+#title{
+    background-color: rgb(0, 59, 24);
+    text-decoration: wavy underline rgb(0, 42, 8);
+}
+body{
+    color:rgb(224, 237, 255);
+    background-color: rgb(51, 51, 51);
+    font-family: "Roboto Slab", "consolas";
+}
+h1{
+    background-color: rgb(9, 18, 15);
+    text-decoration: wavy underline rgb(132, 173, 132);
+    border-right-style:groove;
+}
+
+p{
+    border-style:outset;
+    border-width: 4px;
+    border-color: rgb(144, 164, 185);
+    border-radius: 8px;
+    padding: 4px;
+    color:rgb(228, 240, 255);
+    font-size: 18px;
+   
+    position:relative;
+}
+
+
+/* LINK STYLING */
+
+.text-link{
+    color:rgb(117, 218, 252);
+    text-decoration: none;
+}
+.page-link{
+    color: rgb(173, 173, 255);
+    text-decoration: none;
+}
+.page-link:active{
+    color:rgb(189, 239, 255);
+}
+.page-link:visited{
+    color:rgb(189, 239, 255);
+}
+
+/* PAGE NAVIGATION SYLING */
+
+.bottom-right {
+    position: fixed; /* Sticks to the viewport, not the document */
+    bottom: 0;  /* 0px from the bottom */
+    right: 0;   /* 0px from the right */
+    background-color: lightblue; /* Optional styling */
+    padding: 10px;
+}
+
+  /* Optional styling for the links */
+.bottom-right a {
+    display: block;
+    color: black;
+    text-decoration: none;
+    margin: 5px 0;
+}
+.bottom-right.bottom-right:visitied{
+    color:darkgreen;
+}
+
+/* top level org */
+.about-site{
+    background-color: rgb(55, 90, 91);
+    width:800px;
+}
+
+  /* mid layer 1 org */
+.sidebyside{
+    display: flex;                /* Use Flexbox to align items */
+    justify-content: flex-start;   /* Align items from left to right */
+    align-items: stretch;
+}
+.nav-container1{
+    background-color: rgb(55, 90, 91);
+    border-style:outset;
+    border-width: 4px;
+    width: 300px;
+    border-color: rgb(144, 164, 185);
+    border-radius: 8px;
+    padding: 2px;
+    font-size: large;
+}
+
+.project-idea-container{         
+    margin-left: 20px;
+    background-color: rgb(55, 90, 91);
+    border-style:outset;
+    border-width: 4px;
+    border-color: rgb(144, 164, 185);
+    border-radius: 8px;
+    padding: 1px;
+}
+
+.nav-container1, .project-idea-container{
+    padding: 40px;                /* Add padding to make the containers clearer */ 
+}
